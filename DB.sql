@@ -1,0 +1,1 @@
+ALTER TABLE `characters` ADD COLUMN `infection` tinyint(1) NULL DEFAULT 0;
