@@ -10,7 +10,7 @@ How does it work?
 - When the player's health drops to 150-51 The character starts coughing in between when taking damage.
 - When the player's health drops to 51-5, when taking damage, the character vomits and a Deadeye effect is applied to the screen
 
-- If a character dies, the disease is removed from them automatically
+- If a character dies, the infection is removed from them automatically
 
 Known Issues: 
 - ?

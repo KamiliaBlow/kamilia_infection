@@ -30,8 +30,8 @@ AddEventHandler("vorp_infection:getinfeserv", function()
     end)
 end)
 
-RegisterServerEvent("vorp_walkanim:setinfeserv")
-AddEventHandler("vorp_walkanim:setinfeserv", function(target, animation)
+RegisterServerEvent("vorp_infection:setinfeserv")
+AddEventHandler("vorp_infection:setinfeserv", function(target, animation)
     local infection = animation
 	local User = VorpCore.getUser(target)
 	if User  == nil then
@@ -52,7 +52,7 @@ RegisterCommand("infection", function(source, args)
 
 		if User2 == "admin" then
 			VorpCore.NotifyBottomRight(source,"Вы заразили игрока: "..id,4000)
-			TriggerEvent("vorp_walkanim:setinfeserv", id, true)
+			TriggerEvent("vorp_infection:setinfeserv", id, true)
 			TriggerEvent('vorp_infection:infectPlayer', id)
 		end
 	end
@@ -67,7 +67,7 @@ RegisterCommand("cure", function(source, args)
 
 		if User2 == "admin" then
 			VorpCore.NotifyBottomRight(source,"Вы вылечили игрока: "..id,4000)
-			TriggerEvent("vorp_walkanim:setinfeserv", id, false)
+			TriggerEvent("vorp_infection:setinfeserv", id, false)
 			TriggerClientEvent('vorp_infection:cure', id)
 		end
 	end

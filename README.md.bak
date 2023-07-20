@@ -1,8 +1,0 @@
-# vorp_infection
-
-- This script adds disease and infection to your server.
-
-- To infect a player, enter the command /infection id. To cure a player, enter the /cure id command. You can also add the vaccine item so that players can heal themselves.
-
-Known Issues: 
-- ?

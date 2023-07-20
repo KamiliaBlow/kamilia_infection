@@ -58,7 +58,7 @@ Citizen.CreateThread(function()
 					local closestPlayer, closestDistance = GetClosestPlayer()
 					if closestPlayer ~= -1 and closestDistance < 5.0 then
 						TriggerServerEvent('vorp_infection:infectPlayer', GetPlayerServerId(closestPlayer))
-						TriggerServerEvent("vorp_walkanim:setinfeserv", GetPlayerServerId(closestPlayer), true)
+						TriggerServerEvent("vorp_infection:setinfeserv", GetPlayerServerId(closestPlayer), true)
 					end
 
 					if GetEntityHealth(playerPed) <= 150 and GetEntityHealth(playerPed) >= 51 then
@@ -86,7 +86,7 @@ Citizen.CreateThread(function()
 					end
 			end
 		else
-			TriggerServerEvent("vorp_walkanim:setinfeserv", source, false)
+			TriggerServerEvent("vorp_infection:setinfeserv", source, false)
 			isInfected = false
 		end
 	end
