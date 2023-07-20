@@ -10,7 +10,7 @@ AddEventHandler('vorp_infection:infectPlayer', function(playerId)
 		TriggerClientEvent('vorp_infection:infect', playerId)
 end)
 
-VorpInv.RegisterUsableItem('vaccine', function(data)
+VorpInv.RegisterUsableItem(Config.item, function(data)
 	TriggerClientEvent('vorp_infection:cure', data.source)
 end)
 
@@ -51,7 +51,7 @@ RegisterCommand("infection", function(source, args)
 		local id = args[1]
 
 		if User2 == "admin" then
-			VorpCore.NotifyBottomRight(source,"Вы заразили игрока: "..id,4000)
+			VorpCore.NotifyBottomRight(source,Config.infection_message..""..id,4000)
 			TriggerEvent("vorp_infection:setinfeserv", id, true)
 			TriggerEvent('vorp_infection:infectPlayer', id)
 		end
@@ -66,7 +66,7 @@ RegisterCommand("cure", function(source, args)
 		local id = args[1]
 
 		if User2 == "admin" then
-			VorpCore.NotifyBottomRight(source,"Вы вылечили игрока: "..id,4000)
+			VorpCore.NotifyBottomRight(source,Config.cure_message..""..id,4000)
 			TriggerEvent("vorp_infection:setinfeserv", id, false)
 			TriggerClientEvent('vorp_infection:cure', id)
 		end
