@@ -1,4 +1,4 @@
-# vorp_infection
+# Kamilia_infection
 
 - This script adds disease and infection to your server.
 
